@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Garbage Tagging</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <h1> G-Tracker</h1>
+    <button class="view-history-btn" id="viewHistoryBtn"> View History</button>
+  </div>
+
+  <div class="container">
+    <h2>Upload Garbage Picture</h2>
+    <p class="subtitle">Upload photos to track garbage locations and help keep our environment clean</p>
+    
+    <div class="upload-area" id="uploadArea">
+      <div class="upload-icon">📸</div>
+      <div class="upload-text">Click to upload or drag and drop</div>
+      <div class="upload-subtext"></div>
+    </div>
+    
+    <input type="file" id="imageInput" accept="image/*" />
+    
+    <div id="statusMessage"></div>
+    
+    <div class="preview-section" id="previewSection">
+      <img id="imagePreview" class="image-preview" alt="Uploaded image preview" />
+      
+      <div class="info-card">
+        <div class="info-title">📍 Location Information</div>
+        <div class="info-content" id="locationInfo"></div>
+        <div id="mapLinkContainer"></div>
+      </div>
+      
+      <div class="button-group">
+        <button class="reset-btn" id="resetBtn">Cancel</button>
+        <button class="save-btn" id="saveBtn">💾 Save Record</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="historyModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📜 Uploaded Garbage Records</h2>
+        <button class="close-btn" id="closeModalBtn">×</button>
+      </div>
+      <div id="historyContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
